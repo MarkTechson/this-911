@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example One</title>
+</head>
+<body>
+    <script>
+        function foo() {
+            console.log(this);
+            this.myProp = "Hello!";
+
+            function bar() {
+                this.myOtherProp = "I told you so!";
+            }
+            bar();
+        }
+
+        foo();
+
+        console.log(this.myProp);
+        console.log(this.myOtherProp);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 3</title>
+</head>
+<body>
+    <script>
+        function foo(a, b, c) {
+            console.log(this.a);
+        }
+
+        var fn = foo.bind({a: 1});   // outputs 1
+        fn() // outputs 1 and is forever bound to 1
+        var obj = {
+            a: 'FROM THE OBJECT'
+        };
+        obj.myFn = fn;
+        obj.myFn();
+
+        foo.call({a: 3}, 1, 2, 3); // outputs 3
+        foo.apply({a: 5}, [1, 2, 3]);  // outputs 5
+    </script>
+</body>
+</html>

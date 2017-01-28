@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Use our fat arrow functions
+        function foo() {
+            this.flavor = "cherry";
+
+            ()=>{ console.log(this.flavor)};
+            function bar () {
+                this.flavor = "cherry";
+            }
+            bar();
+            bar.call(this);
+        }
+        foo.call({}, '');
+    </script>
+</body>
+</html>
